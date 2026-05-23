@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dalakit House Villa Two | Siquijor, Philippines</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1F3B2B; /* Dark Jungle Green */
+            --secondary: #2C553E;
+            --accent: #E8D3B9; /* Sand/Wood */
+            --bg-light: #F9F8F6;
+            --text-dark: #2A2A2A;
+            --text-light: #F2F4F2;
+            --glass-bg: rgba(255, 255, 255, 0.85);
+            --glass-border: rgba(255, 255, 255, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Lora', serif;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0));
+            transition: background 0.3s ease;
+        }
+        
+        nav.scrolled {
+            background: var(--primary);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .btn-book-nav {
+            background: var(--accent);
+            color: var(--primary);
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-left: 2rem;
+        }
+        
+        .btn-book-nav:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: url('photo-dalakit-house-villa-two-siquijor-9.jfif') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--text-light);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(31, 59, 43, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+
+        /* Booking Panel */
+        .booking-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            padding: 2rem;
+            border-radius: 20px;
+            display: flex;
+            gap: 1.5rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            align-items: center;
+            max-width: 900px;
+            margin: 0 auto;
+            transform: translateY(50%);
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, 50%);
+            width: 90%;
+            z-index: 10;
+        }
+
+        .booking-group {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            text-align: left;
+        }
+
+        .booking-group label {
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .booking-group input, .booking-group select {
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s;
+            background: white;
+        }
+
+        .booking-group input:focus, .booking-group select:focus {
+            border-color: var(--primary);
+        }
+
+        .btn-search {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            height: 100%;
+            margin-top: 1.6rem;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .btn-search:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .about {
+            padding: 10rem 5% 5rem;
+            display: flex;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* Amenities Section */
+        .amenities {
+            background: var(--primary);
+            color: var(--text-light);
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .amenities h2 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .amenities p.subtitle {
+            font-size: 1.2rem;
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 4rem;
+        }
+
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .amenity-card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 2.5rem;
+            border-radius: 15px;
+            transition: all 0.3s;
+        }
+
+        .amenity-card:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+
+        .amenity-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-family: 'Outfit', sans-serif;
+            color: var(--accent);
+        }
+
+        .amenity-card p {
+            font-weight: 300;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #112218;
+            color: #888;
+            text-align: center;
+            padding: 3rem 5%;
+        }
+
+        footer h3 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .booking-panel {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+            .btn-search {
+                margin-top: 0;
+                width: 100%;
+            }
+            .about {
+                flex-direction: column;
+                padding-top: 25rem; /* Space for stacked booking panel */
+            }
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">Dalakit House</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#amenities">Amenities</a>
+            <a href="#location">Location</a>
+            <a href="#booking" class="btn-book-nav">Book Now</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Villa Two, Siquijor</h1>
+            <p class="serif">Your private oasis in the heart of the Philippine jungle</p>
+        </div>
+
+        <div class="booking-panel">
+            <div class="booking-group">
+                <label>Check-in</label>
+                <input type="date">
+            </div>
+            <div class="booking-group">
+                <label>Check-out</label>
+                <input type="date">
+            </div>
+            <div class="booking-group">
+                <label>Guests</label>
+                <select>
+                    <option>1 Guest</option>
+                    <option selected>2 Guests</option>
+                </select>
+            </div>
+            <button class="btn-search">Check Availability</button>
+        </div>
+    </header>
+
+    <section id="about" class="about">
+        <div class="about-text">
+            <h2>Escape to Nature</h2>
+            <p>Dalakit House Villa Two is a unique apartment for couples, located in the peaceful, natural scenery of Lambojon on Siquijor island. Far from the city noise, our villa offers a true rainforest experience.</p>
+            <p>Wake up to the singing of birds, watch butterflies from your private terrace, and breathe in the cool, mountain air. It's a place where time slows down – perfect for a romantic getaway and a digital detox (though with excellent internet!).</p>
+        </div>
+        <div class="about-image">
+            <img src="c176c3ff-164a-499e-acec-ac2d26aaab1e.avif" alt="Jungle Villa">
+        </div>
+    </section>
+
+    <section id="amenities" class="amenities">
+        <h2>Comfort in the Jungle</h2>
+        <p class="subtitle serif">Everything you need for full relaxation</p>
+        
+        <div class="amenities-grid">
+            <div class="amenity-card">
+                <h3>🛏️ Exceptional Sleep</h3>
+                <p>1 spacious bedroom with a queen-size bed, surrounded by the sounds of nature.</p>
+            </div>
+            <div class="amenity-card">
+                <h3>🍳 Full Kitchen</h3>
+                <p>A fully equipped kitchen, ready for preparing local specialties.</p>
+            </div>
+            <div class="amenity-card">
+                <h3>📡 Starlink WiFi</h3>
+                <p>Reliable, fast satellite internet, perfect for remote work.</p>
+            </div>
+            <div class="amenity-card">
+                <h3>🚿 Modern Bathroom</h3>
+                <p>Hot water and a bidet for your maximum comfort.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <h3 class="serif">Dalakit House Villa Two</h3>
+        <p>Lambojon, Siquijor, Philippines</p>
+        <p style="margin-top: 1rem; font-size: 0.8rem;">© 2026 Visualization Project</p>
+    </footer>
+
+    <script>
+        // Simple navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

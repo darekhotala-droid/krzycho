@@ -29,7 +29,8 @@ export default function Navbar() {
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
       <Link href="/" className={styles.logoContainer} style={{textDecoration: 'none'}}>
-        <img src="/images/logo.png" alt="Dalakit House Logo" className={styles.logoImg} />
+        <div className={styles.logo}>Dalakit House</div>
+        <div className={styles.logoSub}>Villa Two</div>
       </Link>
       <div className={`${styles.hamburger} ${menuActive ? styles.hamburgerActive : ''}`} onClick={toggleMenu}>
         <span></span>

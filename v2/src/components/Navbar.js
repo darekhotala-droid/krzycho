@@ -54,6 +54,10 @@ export default function Navbar() {
             <TbBrandBooking size={26} />
           </a>
         </div>
+
+        <div className={styles.mobileLogoContainer}>
+          <img src="/images/logo.png" alt="Dalakit House Logo" className={styles.mobileLogo} />
+        </div>
       </div>
     </nav>
   );

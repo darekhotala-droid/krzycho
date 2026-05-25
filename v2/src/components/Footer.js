@@ -12,8 +12,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.footerContent}>
         <div className={styles.brand}>
-          <h3 className="serif">Dalakit House</h3>
-          <p className={styles.subBrand}>Villa Two</p>
+          <img src="/images/logo.png" alt="Dalakit House Logo" className={styles.footerLogo} loading="lazy" />
         </div>
         
         <div className={styles.info}>

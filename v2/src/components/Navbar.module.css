@@ -22,19 +22,15 @@
     line-height: 1.1;
 }
 
-.logo {
-    font-size: 1.5rem;
-    color: var(--text-light);
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+.logoImg {
+    max-height: 50px;
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s;
 }
 
-.logoSub {
-    font-size: 0.8rem;
-    color: var(--accent);
-    font-family: var(--font-lora), serif;
-    letter-spacing: 1px;
+.logoContainer:hover .logoImg {
+    transform: scale(1.05);
 }
 
 .navLinks {

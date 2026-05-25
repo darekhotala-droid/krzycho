@@ -1,7 +1,12 @@
+"use client";
+import { useState } from 'react';
 import Link from 'next/link';
 import styles from './GalleryPreview.module.css';
+import Lightbox from './Lightbox';
 
 export default function GalleryPreview() {
+  const [lightboxIndex, setLightboxIndex] = useState(-1);
+
   const images = [
     "/images/IMG-1.jpg",
     "/images/IMG-2.jpg",
@@ -16,7 +21,7 @@ export default function GalleryPreview() {
 
       <div className={styles.scroller}>
         {images.map((img, i) => (
-          <div key={i} className={styles.imageWrapper}>
+          <div key={i} className={styles.imageWrapper} onClick={() => setLightboxIndex(i)} style={{cursor: 'pointer'}}>
             <img src={img} alt={`Dalakit House Villa Two - view ${i + 1}`} loading="lazy" />
           </div>
         ))}
@@ -27,6 +32,13 @@ export default function GalleryPreview() {
           View Full Gallery
         </Link>
       </div>
+
+      <Lightbox 
+        images={images} 
+        initialIndex={lightboxIndex === -1 ? 0 : lightboxIndex} 
+        isOpen={lightboxIndex !== -1} 
+        onClose={() => setLightboxIndex(-1)} 
+      />
     </section>
   );
 }

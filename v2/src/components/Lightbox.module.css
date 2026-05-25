@@ -1,0 +1,102 @@
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(17, 34, 24, 0.95);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000;
+    transition: color 0.3s;
+}
+
+.closeBtn:hover {
+    color: var(--accent);
+}
+
+.navBtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.3);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    transition: background 0.3s;
+}
+
+.navBtn:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+.prevBtn {
+    left: 20px;
+}
+
+.nextBtn {
+    right: 20px;
+}
+
+.imageContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.imageContainer img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    user-select: none;
+    pointer-events: none;
+}
+
+.counter {
+    position: absolute;
+    bottom: 30px;
+    color: rgba(255,255,255,0.7);
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+    .navBtn {
+        display: none; /* Ukryte by wymusić swajpowanie na telefonach */
+    }
+    .imageContainer {
+        padding: 0;
+    }
+    .imageContainer img {
+        border-radius: 0;
+        max-height: 100vh;
+    }
+}

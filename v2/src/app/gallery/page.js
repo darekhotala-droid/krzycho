@@ -1,9 +1,14 @@
+"use client";
+import { useState } from 'react';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Lightbox from '@/components/Lightbox';
 import styles from './Gallery.module.css';
 
 export default function GalleryPage() {
+  const [lightboxIndex, setLightboxIndex] = useState(-1);
+  
   const images = [
     "/images/photo-dalakit-house-villa-two-siquijor-9.jfif",
     "/images/IMG-1.jpg",
@@ -25,13 +30,20 @@ export default function GalleryPage() {
         
         <div className={styles.grid}>
           {images.map((img, i) => (
-            <div key={i} className={styles.imageCard}>
+            <div key={i} className={styles.imageCard} onClick={() => setLightboxIndex(i)} style={{cursor: 'pointer'}}>
               <img src={img} alt={`Gallery image ${i + 1}`} loading="lazy" />
             </div>
           ))}
         </div>
       </main>
       <Footer />
+      
+      <Lightbox 
+        images={images} 
+        initialIndex={lightboxIndex === -1 ? 0 : lightboxIndex} 
+        isOpen={lightboxIndex !== -1} 
+        onClose={() => setLightboxIndex(-1)} 
+      />
     </>
   );
 }

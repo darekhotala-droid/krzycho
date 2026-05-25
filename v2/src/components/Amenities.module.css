@@ -38,6 +38,12 @@
     transform: translateY(-5px);
 }
 
+.icon {
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
 .amenityCard h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;

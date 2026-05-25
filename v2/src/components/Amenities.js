@@ -1,3 +1,4 @@
+import { TbBed, TbToolsKitchen2, TbWifi, TbBath } from 'react-icons/tb';
 import styles from './Amenities.module.css';
 
 export default function Amenities() {
@@ -8,19 +9,23 @@ export default function Amenities() {
       
       <div className={styles.amenitiesGrid}>
         <div className={styles.amenityCard}>
-          <h3>🛏️ Exceptional Sleep</h3>
+          <TbBed size={48} className={styles.icon} />
+          <h3>Exceptional Sleep</h3>
           <p>1 spacious bedroom with a queen-size bed, surrounded by the sounds of nature.</p>
         </div>
         <div className={styles.amenityCard}>
-          <h3>🍳 Full Kitchen</h3>
+          <TbToolsKitchen2 size={48} className={styles.icon} />
+          <h3>Full Kitchen</h3>
           <p>A fully equipped kitchen, ready for preparing local specialties.</p>
         </div>
         <div className={styles.amenityCard}>
-          <h3>📡 Starlink WiFi</h3>
+          <TbWifi size={48} className={styles.icon} />
+          <h3>Starlink WiFi</h3>
           <p>Reliable, fast satellite internet, perfect for remote work.</p>
         </div>
         <div className={styles.amenityCard}>
-          <h3>🚿 Modern Bathroom</h3>
+          <TbBath size={48} className={styles.icon} />
+          <h3>Modern Bathroom</h3>
           <p>Hot water and a bidet for your maximum comfort.</p>
         </div>
       </div>

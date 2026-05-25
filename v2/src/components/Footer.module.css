@@ -1,0 +1,71 @@
+.footer {
+    background: #112218;
+    color: #A0AAB2;
+    padding: 5rem 5% 2rem;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 3rem;
+    margin-bottom: 2rem;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand h3 {
+    color: white;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.subBrand {
+    color: var(--accent);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.info {
+    text-align: center;
+}
+
+.social {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social a {
+    color: white;
+    transition: color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social a:hover {
+    color: var(--accent);
+    transform: scale(1.1);
+}
+
+.copyright {
+    text-align: center;
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .footerContent {
+        flex-direction: column;
+        gap: 2.5rem;
+        text-align: center;
+    }
+}

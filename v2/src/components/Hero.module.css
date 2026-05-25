@@ -1,0 +1,90 @@
+.hero {
+    height: 100vh;
+    background: url('/images/photo-dalakit-house-villa-two-siquijor-9.jfif') center/cover no-repeat;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-light);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(31, 59, 43, 0.4);
+}
+
+.heroContent {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.heroContent h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.1;
+}
+
+.heroContent p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+}
+
+.actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.btnPrimary {
+    background: var(--accent);
+    color: var(--primary);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btnPrimary:hover {
+    background: white;
+    transform: translateY(-2px);
+}
+
+.btnSecondary {
+    background: transparent;
+    color: var(--text-light);
+    border: 2px solid var(--text-light);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btnSecondary:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+    .heroContent h1 {
+        font-size: 3rem;
+    }
+    .actions {
+        flex-direction: column;
+    }
+}

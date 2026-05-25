@@ -1,0 +1,33 @@
+:root {
+  --primary: #1F3B2B;
+  --secondary: #2C553E;
+  --accent: #E8D3B9;
+  --bg-light: #F9F8F6;
+  --text-dark: #2A2A2A;
+  --text-light: #F2F4F2;
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(255, 255, 255, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, .serif {
+  font-family: var(--font-lora), serif;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

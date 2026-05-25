@@ -1,0 +1,119 @@
+.nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0));
+    transition: background 0.3s ease;
+}
+
+.scrolled {
+    background: var(--primary);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    color: var(--text-light);
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.navLinks {
+    display: flex;
+    align-items: center;
+}
+
+.navLinks a {
+    color: var(--text-light);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+    color: var(--accent);
+}
+
+.btnBookNav {
+    background: var(--accent) !important;
+    color: var(--primary) !important;
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-left: 2rem;
+}
+
+.btnBookNav:hover {
+    background: white !important;
+    transform: translateY(-2px);
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1000;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-light);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 900px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .navLinks {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--primary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    }
+
+    .navLinksActive {
+        right: 0;
+    }
+
+    .navLinks a {
+        margin: 1.5rem 0;
+        font-size: 1.2rem;
+    }
+
+    .btnBookNav {
+        margin: 1.5rem 0;
+    }
+    
+    .hamburgerActive span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .hamburgerActive span:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburgerActive span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+}

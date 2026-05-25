@@ -1,0 +1,47 @@
+.about {
+    padding: 10rem 5% 5rem;
+    display: flex;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.aboutText {
+    flex: 1;
+}
+
+.aboutText h2 {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.aboutText p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.aboutImage {
+    flex: 1;
+    position: relative;
+}
+
+.aboutImage img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: transform 0.5s;
+}
+
+.aboutImage:hover img {
+    transform: scale(1.02);
+}
+
+@media (max-width: 900px) {
+    .about {
+        flex-direction: column;
+        padding-top: 5rem;
+    }
+}

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import styles from './Navbar.module.css';
 import { SiAirbnb } from 'react-icons/si';
 import { TbBrandBooking } from 'react-icons/tb';
@@ -37,9 +38,10 @@ export default function Navbar() {
         <span></span>
       </div>
       <div className={`${styles.navLinks} ${menuActive ? styles.navLinksActive : ''}`}>
-        <a href="#about" onClick={closeMenu}>About</a>
-        <a href="#amenities" onClick={closeMenu}>Amenities</a>
-        <a href="#calendar" onClick={closeMenu}>Availability</a>
+        <a href="/#about" onClick={closeMenu}>About</a>
+        <a href="/#amenities" onClick={closeMenu}>Amenities</a>
+        <Link href="/gallery" onClick={closeMenu}>Gallery</Link>
+        <a href="/#calendar" onClick={closeMenu}>Availability</a>
         
         <div className={styles.iconLinks}>
           <a href={igLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram" onClick={closeMenu}>

@@ -1,12 +1,22 @@
 "use client";
+import { useState } from 'react';
 import styles from './Calendar.module.css';
 
 export default function Calendar() {
-  // Simple mock data for one month
-  const daysInMonth = 31;
-  const firstDayOffset = 3; // Starts on Wednesday (0=Sun, 1=Mon, etc.)
+  const [currentDate, setCurrentDate] = useState(new Date());
+
+  const year = currentDate.getFullYear();
+  const month = currentDate.getMonth();
+
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const firstDayOffset = new Date(year, month, 1).getDay();
+
+  const monthName = currentDate.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+
+  const prevMonth = () => setCurrentDate(new Date(year, month - 1, 1));
+  const nextMonth = () => setCurrentDate(new Date(year, month + 1, 1));
   
-  // Mock booked days
+  // Mock booked days (static for visual representation until iCal is linked)
   const bookedDays = [12, 13, 14, 25, 26, 27];
 
   const emptyCells = Array.from({ length: firstDayOffset }, (_, i) => <div key={`empty-${i}`} className={`${styles.day} ${styles.empty}`}></div>);
@@ -29,9 +39,9 @@ export default function Calendar() {
       
       <div className={styles.calendarContainer}>
         <div className={styles.calendarHeader}>
-          <button className={styles.navButton}>&lt;</button>
-          <h3>August 2026</h3>
-          <button className={styles.navButton}>&gt;</button>
+          <button className={styles.navButton} onClick={prevMonth}>&lt;</button>
+          <h3>{monthName}</h3>
+          <button className={styles.navButton} onClick={nextMonth}>&gt;</button>
         </div>
         
         <div className={styles.weekdays}>

@@ -16,12 +16,25 @@
     box-shadow: 0 4px 20px rgba(0,0,0,0.1);
 }
 
+.logoContainer {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
 .logo {
     font-size: 1.5rem;
     color: var(--text-light);
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
+}
+
+.logoSub {
+    font-size: 0.8rem;
+    color: var(--accent);
+    font-family: var(--font-lora), serif;
+    letter-spacing: 1px;
 }
 
 .navLinks {
@@ -56,6 +69,25 @@
 .btnBookNav:hover {
     background: white !important;
     transform: translateY(-2px);
+}
+
+.iconLinks {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-left: 2.5rem;
+}
+
+.iconLinks a {
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconLinks a:hover {
+    color: var(--accent);
+    transform: scale(1.1);
 }
 
 .hamburger {
@@ -101,6 +133,16 @@
     .navLinks a {
         margin: 1.5rem 0;
         font-size: 1.2rem;
+    }
+
+    .iconLinks {
+        margin-left: 0;
+        margin-top: 2rem;
+        gap: 2rem;
+    }
+
+    .iconLinks a {
+        margin: 0;
     }
 
     .btnBookNav {

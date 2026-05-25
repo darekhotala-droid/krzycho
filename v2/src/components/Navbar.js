@@ -28,10 +28,10 @@ export default function Navbar() {
 
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
-      <div className={styles.logoContainer}>
+      <Link href="/" className={styles.logoContainer} style={{textDecoration: 'none'}}>
         <div className={styles.logo}>Dalakit House</div>
         <div className={styles.logoSub}>Villa Two</div>
-      </div>
+      </Link>
       <div className={`${styles.hamburger} ${menuActive ? styles.hamburgerActive : ''}`} onClick={toggleMenu}>
         <span></span>
         <span></span>

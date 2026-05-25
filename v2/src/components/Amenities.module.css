@@ -1,6 +1,6 @@
 .amenities {
-    background: var(--primary);
-    color: var(--text-light);
+    background: var(--bg-light);
+    color: var(--text-dark);
     padding: 6rem 5%;
     text-align: center;
 }
@@ -8,12 +8,12 @@
 .amenities h2 {
     font-size: 2.8rem;
     margin-bottom: 1rem;
+    color: var(--primary);
 }
 
 .subtitle {
     font-size: 1.2rem;
-    font-style: italic;
-    color: var(--accent);
+    color: var(--secondary);
     margin-bottom: 4rem;
 }
 
@@ -26,31 +26,33 @@
 }
 
 .amenityCard {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 2.5rem;
-    border-radius: 15px;
-    transition: all 0.3s;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.05);
+    padding: 3rem 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: all 0.4s ease;
 }
 
 .amenityCard:hover {
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(60, 110, 54, 0.1);
+    border-color: var(--secondary);
 }
 
 .icon {
-    color: var(--accent);
+    color: var(--primary);
     margin-bottom: 1.5rem;
-    opacity: 0.9;
 }
 
 .amenityCard h3 {
     font-size: 1.4rem;
     margin-bottom: 1rem;
-    color: var(--accent);
+    color: var(--text-dark);
 }
 
 .amenityCard p {
-    font-weight: 300;
-    opacity: 0.9;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.6;
 }

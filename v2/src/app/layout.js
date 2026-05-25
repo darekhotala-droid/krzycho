@@ -1,15 +1,14 @@
-import { Outfit, Lora } from "next/font/google";
+import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 
-const outfit = Outfit({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-inter",
 });
 
-const lora = Lora({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-lora",
+  variable: "--font-montserrat",
 });
 
 export const metadata = {
@@ -19,7 +18,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${outfit.variable} ${lora.variable}`}>
+    <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
       <body className="font-sans antialiased">
         {children}
       </body>

@@ -28,6 +28,36 @@
     color: var(--accent);
 }
 
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    padding: 0 5%;
+}
+
+.catBtn {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.catBtn:hover {
+    background: rgba(60, 110, 54, 0.1);
+}
+
+.activeCat {
+    background: var(--primary) !important;
+    color: white !important;
+}
+
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

@@ -20,10 +20,17 @@ body {
   background-color: var(--bg-light);
   line-height: 1.6;
   overflow-x: hidden;
+  font-family: var(--font-inter), sans-serif;
 }
 
-h1, h2, h3, .serif {
-  font-family: var(--font-lora), serif;
+h1, h2, h3, h4, h5, h6, .logo {
+  font-family: var(--font-montserrat), sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.serif {
+  font-family: var(--font-montserrat), sans-serif;
+  font-weight: 500;
 }
 
 /* Animations */

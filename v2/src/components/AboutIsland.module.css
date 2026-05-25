@@ -1,0 +1,34 @@
+.islandSection {
+    padding: 6rem 5%;
+    background: var(--primary);
+    color: white;
+    text-align: center;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.islandSection h2 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.islandSection .serif {
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin-bottom: 2.5rem;
+    letter-spacing: 1px;
+}
+
+.textBody {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.85);
+}
+
+.textBody p {
+    margin-bottom: 1.5rem;
+}

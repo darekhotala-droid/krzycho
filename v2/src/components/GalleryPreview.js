@@ -8,10 +8,10 @@ export default function GalleryPreview() {
   const [lightboxIndex, setLightboxIndex] = useState(-1);
 
   const images = [
-    "/images/IMG-1.jpg",
-    "/images/IMG-2.jpg",
-    "/images/c176c3ff-164a-499e-acec-ac2d26aaab1e.avif",
-    "/images/photo-dalakit-house-villa-two-siquijor-9.jfif"
+    "/images/178eae31-2a15-43d7-a30d-7c21bacd6598.JPG",
+    "/images/IMG_9583.JPG",
+    "/images/IMG_9576.JPG",
+    "/images/IMG_9591.JPG"
   ];
 
   return (

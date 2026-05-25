@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
+import AboutIsland from '@/components/AboutIsland';
 import Amenities from '@/components/Amenities';
 import GalleryPreview from '@/components/GalleryPreview';
 import Calendar from '@/components/Calendar';
@@ -12,6 +13,7 @@ export default function Home() {
       <Navbar />
       <Hero />
       <About />
+      <AboutIsland />
       <Amenities />
       <GalleryPreview />
       <Calendar />

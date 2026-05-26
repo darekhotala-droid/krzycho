@@ -1,5 +1,5 @@
 import styles from './Footer.module.css';
-import { FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import { SiAirbnb } from 'react-icons/si';
 import { TbBrandBooking } from 'react-icons/tb';
 
@@ -18,6 +18,10 @@ export default function Footer() {
         <div className={styles.info}>
           <p>Lambojon, Siquijor</p>
           <p>Philippines</p>
+          <div className={styles.contactInfo} style={{marginTop: '1.5rem'}}>
+            <p><FaEnvelope size={14} style={{marginRight: '8px'}} /> dalakitvillatwo@gmail.com</p>
+            <p><FaPhoneAlt size={14} style={{marginRight: '8px'}} /> +63 995 350 0379 (Chris)</p>
+          </div>
         </div>
 
         <div className={styles.social}>

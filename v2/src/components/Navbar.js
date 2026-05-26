@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
 import { SiAirbnb } from 'react-icons/si';
 import { TbBrandBooking } from 'react-icons/tb';
-import { FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -48,9 +48,16 @@ export default function Navbar() {
         <a href="/#about" onClick={closeMenu}>About</a>
         <a href="/#amenities" onClick={closeMenu}>Amenities</a>
         <Link href="/gallery" onClick={closeMenu}>Gallery</Link>
+        <Link href="/contact" onClick={closeMenu}>Contact</Link>
         <a href="/#calendar" onClick={closeMenu}>Availability</a>
         
         <div className={styles.iconLinks}>
+          <a href="mailto:dalakitvillatwo@gmail.com" aria-label="Email" onClick={closeMenu}>
+            <FaEnvelope size={24} />
+          </a>
+          <a href="tel:+639953500379" aria-label="Phone" onClick={closeMenu}>
+            <FaPhoneAlt size={22} />
+          </a>
           <a href={igLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram" onClick={closeMenu}>
             <FaInstagram size={24} />
           </a>

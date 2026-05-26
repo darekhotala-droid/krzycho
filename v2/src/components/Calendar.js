@@ -1,9 +1,27 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './Calendar.module.css';
 
 export default function Calendar() {
   const [currentDate, setCurrentDate] = useState(new Date());
+  const [bookedRanges, setBookedRanges] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchCalendar() {
+      try {
+        const res = await fetch('/api/calendar');
+        if (!res.ok) throw new Error('Failed to fetch');
+        const data = await res.json();
+        setBookedRanges(data.bookedRanges || []);
+      } catch (err) {
+        console.error("Calendar fetch error:", err);
+      } finally {
+        setIsLoading(false);
+      }
+    }
+    fetchCalendar();
+  }, []);
 
   const year = currentDate.getFullYear();
   const month = currentDate.getMonth();
@@ -16,14 +34,24 @@ export default function Calendar() {
   const prevMonth = () => setCurrentDate(new Date(year, month - 1, 1));
   const nextMonth = () => setCurrentDate(new Date(year, month + 1, 1));
   
-  // Mock booked days (static for visual representation until iCal is linked)
-  const bookedDays = [12, 13, 14, 25, 26, 27];
+  const isDateBooked = (d, m, y) => {
+    const checkDate = new Date(y, m, d);
+    return bookedRanges.some(range => {
+      const start = new Date(range.start);
+      const end = new Date(range.end);
+      
+      const startDay = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+      const endDay = new Date(end.getFullYear(), end.getMonth(), end.getDate());
+      
+      return checkDate >= startDay && checkDate < endDay;
+    });
+  };
 
   const emptyCells = Array.from({ length: firstDayOffset }, (_, i) => <div key={`empty-${i}`} className={`${styles.day} ${styles.empty}`}></div>);
   
   const dayCells = Array.from({ length: daysInMonth }, (_, i) => {
     const day = i + 1;
-    const isBooked = bookedDays.includes(day);
+    const isBooked = isDateBooked(day, month, year);
     const dayClass = isBooked ? styles.booked : styles.available;
     return (
       <div key={day} className={`${styles.day} ${dayClass}`}>
@@ -40,7 +68,7 @@ export default function Calendar() {
       <div className={styles.calendarContainer}>
         <div className={styles.calendarHeader}>
           <button className={styles.navButton} onClick={prevMonth}>&lt;</button>
-          <h3>{monthName}</h3>
+          <h3>{monthName} {isLoading && <span style={{fontSize: '0.8rem', color: '#999'}}>(loading...)</span>}</h3>
           <button className={styles.navButton} onClick={nextMonth}>&gt;</button>
         </div>
         

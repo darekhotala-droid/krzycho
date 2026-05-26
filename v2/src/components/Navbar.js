@@ -52,21 +52,31 @@ export default function Navbar() {
         <a href="/#calendar" onClick={closeMenu}>Availability</a>
         
         <div className={styles.iconLinks}>
-          <a href="mailto:dalakitvillatwo@gmail.com" aria-label="Email" onClick={closeMenu}>
-            <FaEnvelope size={24} />
-          </a>
-          <a href="tel:+639953500379" aria-label="Phone" onClick={closeMenu}>
-            <FaPhoneAlt size={22} />
-          </a>
-          <a href={igLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram" onClick={closeMenu}>
-            <FaInstagram size={24} />
-          </a>
-          <a href={airbnbLink} target="_blank" rel="noopener noreferrer" aria-label="Airbnb" onClick={closeMenu}>
-            <SiAirbnb size={24} />
-          </a>
-          <a href={bookingLink} target="_blank" rel="noopener noreferrer" aria-label="Booking.com" onClick={closeMenu}>
-            <TbBrandBooking size={26} />
-          </a>
+          <div className={`${styles.iconGroup} ${styles.desktopHidden}`}>
+            <a href="mailto:dalakitvillatwo@gmail.com" aria-label="Email" onClick={closeMenu}>
+              <FaEnvelope size={24} />
+            </a>
+            <a href="tel:+639953500379" aria-label="Phone" onClick={closeMenu}>
+              <FaPhoneAlt size={22} />
+            </a>
+          </div>
+          
+          <div className={styles.iconGroup}>
+            <a href={igLink} target="_blank" rel="noopener noreferrer" aria-label="Instagram" onClick={closeMenu}>
+              <FaInstagram size={24} />
+            </a>
+          </div>
+          
+          <div className={styles.divider}></div>
+          
+          <div className={styles.iconGroup}>
+            <a href={airbnbLink} target="_blank" rel="noopener noreferrer" aria-label="Airbnb" onClick={closeMenu}>
+              <SiAirbnb size={24} />
+            </a>
+            <a href={bookingLink} target="_blank" rel="noopener noreferrer" aria-label="Booking.com" onClick={closeMenu}>
+              <TbBrandBooking size={26} />
+            </a>
+          </div>
         </div>
 
         <div className={styles.mobileLogoContainer}>

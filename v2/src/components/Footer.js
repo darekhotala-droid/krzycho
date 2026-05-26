@@ -19,8 +19,8 @@ export default function Footer() {
           <p>Lambojon, Siquijor</p>
           <p>Philippines</p>
           <div className={styles.contactInfo} style={{marginTop: '1.5rem'}}>
-            <p><FaEnvelope size={14} style={{marginRight: '8px'}} /> dalakitvillatwo@gmail.com</p>
-            <p><FaPhoneAlt size={14} style={{marginRight: '8px'}} /> +63 995 350 0379 (Chris)</p>
+            <p><FaEnvelope size={14} style={{marginRight: '8px'}} /> <a href="mailto:dalakitvillatwo@gmail.com" style={{color: 'inherit', textDecoration: 'none'}}>dalakitvillatwo@gmail.com</a></p>
+            <p><FaPhoneAlt size={14} style={{marginRight: '8px'}} /> <a href="tel:+639953500379" style={{color: 'inherit', textDecoration: 'none'}}>+63 995 350 0379</a> (Chris)</p>
           </div>
         </div>
 

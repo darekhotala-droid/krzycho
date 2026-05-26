@@ -16,7 +16,6 @@ export default function ContactPage() {
       <Navbar />
       <main className={styles.page}>
         <div className={styles.header}>
-          <Link href="/" className={styles.backBtn}>&larr; Back to Home</Link>
           <img src="/images/logo.png" alt="Dalakit House Logo" className={styles.logo} />
           <h1>Contact Us</h1>
           <p className="serif" style={{color: '#666', fontSize: '1.2rem', marginTop: '0.5rem'}}>We'd love to hear from you</p>

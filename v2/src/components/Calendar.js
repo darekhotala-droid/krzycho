@@ -34,6 +34,11 @@ export default function Calendar() {
   const prevMonth = () => setCurrentDate(new Date(year, month - 1, 1));
   const nextMonth = () => setCurrentDate(new Date(year, month + 1, 1));
   
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  const isPrevDisabled = year < today.getFullYear() || (year === today.getFullYear() && month <= today.getMonth());
+
   const isDateBooked = (d, m, y) => {
     const checkDate = new Date(y, m, d);
     return bookedRanges.some(range => {
@@ -51,8 +56,17 @@ export default function Calendar() {
   
   const dayCells = Array.from({ length: daysInMonth }, (_, i) => {
     const day = i + 1;
+    const dateToCheck = new Date(year, month, day);
+    const isPast = dateToCheck < today;
     const isBooked = isDateBooked(day, month, year);
-    const dayClass = isBooked ? styles.booked : styles.available;
+    
+    let dayClass = styles.available;
+    if (isPast) {
+      dayClass = styles.past;
+    } else if (isBooked) {
+      dayClass = styles.booked;
+    }
+
     return (
       <div key={day} className={`${styles.day} ${dayClass}`}>
         {day}
@@ -67,7 +81,14 @@ export default function Calendar() {
       
       <div className={styles.calendarContainer}>
         <div className={styles.calendarHeader}>
-          <button className={styles.navButton} onClick={prevMonth}>&lt;</button>
+          <button 
+            className={styles.navButton} 
+            onClick={prevMonth} 
+            disabled={isPrevDisabled}
+            style={{ opacity: isPrevDisabled ? 0.2 : 1, cursor: isPrevDisabled ? 'default' : 'pointer' }}
+          >
+            &lt;
+          </button>
           <h3>{monthName} {isLoading && <span style={{fontSize: '0.8rem', color: '#999'}}>(loading...)</span>}</h3>
           <button className={styles.navButton} onClick={nextMonth}>&gt;</button>
         </div>
